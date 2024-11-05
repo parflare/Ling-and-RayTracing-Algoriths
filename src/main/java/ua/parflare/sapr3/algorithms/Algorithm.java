@@ -1,4 +1,8 @@
-package ua.parflare.sapr3;
+package ua.parflare.sapr3.algorithms;
+
+import ua.parflare.sapr3.models.Cell;
+import ua.parflare.sapr3.models.Connection;
+import ua.parflare.sapr3.models.Schema;
 
 import java.awt.*;
 import java.util.ArrayList;
@@ -55,7 +59,7 @@ public abstract class Algorithm {
         return weight;
     }
 
-    protected void run() {
+    public void run() {
 
         while (connections.size() >= 1) {
             for (int i = 0; i < schemas.size(); i++) {
@@ -65,7 +69,7 @@ public abstract class Algorithm {
 
                 if (path == null && i == schemas.size() - 1) {
                     schemas.add(originalSchema.getSchemaCopy());
-                    System.out.println("created new schema");
+                    //System.out.println("created new schema");
                     break;
                 }
                 if (path != null) {
@@ -80,12 +84,12 @@ public abstract class Algorithm {
                     schema.addConnection(connection);
                     schema.setCells(tmpCells);
 
-                    System.out.println(charArrayToString(schema.getSchemaInArray()));
+                    //System.out.println(charArrayToString(schema.getSchemaInArray()));
 
                     connections.remove(connectionName);
                     break;
                 } else {
-                    System.out.println("trying to find way in next schema..");
+                    //System.out.println("trying to find way in next schema..");
                 }
             }
 

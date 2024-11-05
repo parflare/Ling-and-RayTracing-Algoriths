@@ -1,4 +1,4 @@
-package ua.parflare.sapr3;
+package ua.parflare.sapr3.controllers;
 
 import javafx.fxml.FXML;
 import javafx.geometry.HPos;
@@ -11,6 +11,8 @@ import javafx.scene.control.*;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
+import ua.parflare.sapr3.AlgorithmRunner;
+import ua.parflare.sapr3.utils.ColorListUtil;
 
 import java.awt.*;
 import java.util.ArrayList;
@@ -141,7 +143,7 @@ public class Controller {
 
                 if (value.matches("[A-Z]{2}\\d+")) {
                     int connectionIndex = connectionsCopy.indexOf(value);
-                    java.awt.Color awtColor = ColorList.getColorByIndex(connectionIndex);
+                    java.awt.Color awtColor = ColorListUtil.getColorByIndex(connectionIndex);
                     String fxColor = String.format("#%02x%02x%02x", awtColor.getRed(), awtColor.getGreen(), awtColor.getBlue());
                     textField.setStyle("-fx-background-color: " + fxColor + "; -fx-border-color: black; -fx-border-width: 1px;");
                 } else if (value.matches("[A-Z]")) {

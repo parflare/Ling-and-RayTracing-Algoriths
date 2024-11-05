@@ -1,9 +1,9 @@
-package ua.parflare.sapr3;
+package ua.parflare.sapr3.utils;
 
 import java.awt.Color;
 import java.util.ArrayList;
 
-public class ColorList {
+public class ColorListUtil {
     private static final ArrayList<Color> colors = new ArrayList<>() {{
         add(new Color(236, 132, 145)); // Light Pink
         add(new Color(137, 209, 234)); // Light Blue

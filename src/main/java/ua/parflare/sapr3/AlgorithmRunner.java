@@ -1,5 +1,10 @@
 package ua.parflare.sapr3;
 
+import ua.parflare.sapr3.algorithms.impl.LingAlgorithm;
+import ua.parflare.sapr3.algorithms.impl.RayTracingAlgorithm;
+import ua.parflare.sapr3.controllers.Controller;
+import ua.parflare.sapr3.models.Schema;
+
 import java.awt.*;
 import java.util.*;
 
@@ -107,7 +112,7 @@ public class AlgorithmRunner {
 
     }
 
-    static String charArrayToString(String[][] schema) {
+    public static String charArrayToString(String[][] schema) {
         String result = "\n";
         int rows = schema.length;
         int cols = schema[0].length;

@@ -1,4 +1,9 @@
-package ua.parflare.sapr3;
+package ua.parflare.sapr3.algorithms.impl;
+
+import ua.parflare.sapr3.AlgorithmRunner;
+import ua.parflare.sapr3.algorithms.Algorithm;
+import ua.parflare.sapr3.models.Cell;
+import ua.parflare.sapr3.models.Schema;
 
 import java.awt.*;
 import java.util.ArrayList;
@@ -59,10 +64,10 @@ public class LingAlgorithm extends Algorithm {
             }
 
             if (connectResponseCode == 0 || sameCells > 0) {
-                System.out.println("step " + (stepNumber));
+                //System.out.println("step " + (stepNumber));
                 tmpSchema.setCells(tmpCells);
                 tmpCells1 = tmpSchema.getCells();
-                System.out.println(charArrayToString(tmpSchema.getSchemaInArray()));
+                //System.out.println(charArrayToString(tmpSchema.getSchemaInArray()));
             }
             // Якщо досягли кінцевої точки або нема варіантів для руху
             if (connectResponseCode == 1 || (sameCells == 0 && !isFirstIteration)) {
@@ -80,9 +85,9 @@ public class LingAlgorithm extends Algorithm {
 
         LinkedList<Point> path = findBackWay(tmpSchema.getCells(), first, second, stepNumber);
 
-        System.out.println();
+        //System.out.println();
         for (int i = 0; i < path.size(); i++) {
-            System.out.println("\n" + path.get(i).toString());
+            //System.out.println("\n" + path.get(i).toString());
         }
 
         return path;
@@ -96,7 +101,7 @@ public class LingAlgorithm extends Algorithm {
         if (row + 1 < tmpSchema.length) {
             currentChar = tmpSchema[row + 1][col].getValue();
 
-            System.out.print(currentChar);
+            //System.out.print(currentChar);
 
             if (currentChar.equals("0")) {
                 notTriggered = false;
@@ -108,7 +113,7 @@ public class LingAlgorithm extends Algorithm {
         }
         if (row > 0) {
             currentChar = tmpSchema[row - 1][col].getValue();
-            System.out.print(currentChar);
+            //System.out.print(currentChar);
 
             if (currentChar.equals("0")) {
                 notTriggered = false;
@@ -121,7 +126,7 @@ public class LingAlgorithm extends Algorithm {
 
         if (col + 1 < tmpSchema[0].length) {
             currentChar = tmpSchema[row][col + 1].getValue();
-            System.out.print(currentChar);
+            //System.out.print(currentChar);
 
             if (currentChar.equals("0")) {
                 notTriggered = false;
@@ -134,7 +139,7 @@ public class LingAlgorithm extends Algorithm {
 
         if (col > 0) {
             currentChar = tmpSchema[row][col - 1].getValue();
-            System.out.print(currentChar);
+            //System.out.print(currentChar);
 
             if (currentChar.equals("0")) {
                 notTriggered = false;
@@ -144,7 +149,7 @@ public class LingAlgorithm extends Algorithm {
                 return 1;
             }
         }
-        System.out.println();
+        //System.out.println();
 
         if (notTriggered) {
             return -1;

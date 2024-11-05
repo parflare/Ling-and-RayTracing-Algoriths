@@ -1,4 +1,9 @@
-package ua.parflare.sapr3;
+package ua.parflare.sapr3.algorithms.impl;
+
+import ua.parflare.sapr3.AlgorithmRunner;
+import ua.parflare.sapr3.algorithms.Algorithm;
+import ua.parflare.sapr3.models.Cell;
+import ua.parflare.sapr3.models.Schema;
 
 import java.awt.*;
 import java.util.ArrayList;
@@ -31,10 +36,10 @@ public class RayTracingAlgorithm extends Algorithm {
             connectResponseCode = doRayStep(tmpCells, tmpCells1, tmp, second, stepNumber, String.valueOf(connectionName.charAt(1)));
 
             if (connectResponseCode == 0) {
-                System.out.println("step " + stepNumber);
+                //System.out.println("step " + stepNumber);
                 tmpSchema.setCells(tmpCells); // зберігаємо стан
                 tmpCells1 = tmpSchema.getCells(); // оновлюємо стан
-                System.out.println(charArrayToString(tmpSchema.getSchemaInArray()));
+                //System.out.println(charArrayToString(tmpSchema.getSchemaInArray()));
             }
 
             if (connectResponseCode == 1) {
@@ -51,9 +56,9 @@ public class RayTracingAlgorithm extends Algorithm {
 
         LinkedList<Point> path = findBackWay(tmpSchema.getCells(), first, second, stepNumber);
 
-        System.out.println();
+        //System.out.println();
         for (int i = 0; i < path.size(); i++) {
-            System.out.println(path.get(i).toString());
+            //System.out.println(path.get(i).toString());
         }
 
         return path;

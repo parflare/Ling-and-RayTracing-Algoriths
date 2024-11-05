@@ -1,4 +1,4 @@
-package ua.parflare.sapr3;
+package ua.parflare.sapr3.models;
 
 import java.awt.*;
 import java.util.Arrays;
